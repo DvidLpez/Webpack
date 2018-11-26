@@ -1,0 +1,34 @@
+{
+    "name": "webpack",
+    "version": "1.0.0",
+    "description": "Compile js and sass for diferents pages and environments",
+    "private": true,
+    "scripts": {
+        "dev-common": "webpack --config webpack.dev-common.js --watch",
+        "dev-pdp": "webpack --config webpack.dev-pdp.js --watch",
+        "build": "webpack --config webpack.prod.js --env.patch"
+    },
+    "keywords": [],
+    "author": "David López Blasco",
+    "license": "ISC",
+    "devDependencies": {
+        "clean-webpack-plugin": "^1.0.0",
+        "css-loader": "^1.0.0",
+        "file-loader": "^2.0.0",
+        "html-webpack-plugin": "^3.2.0",
+        "mini-css-extract-plugin": "^0.4.5",
+        "node-sass": "^4.10.0",
+        "optimize-css-assets-webpack-plugin": "^4.0.0",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.0",
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "webpack": "^4.17.1",
+        "webpack-auto-inject-version": "^1.2.2",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-server": "^3.1.10",
+        "webpack-merge": "^4.1.4"
+    },
+    "dependencies": {
+        "lodash": "^4.17.10"
+    }
+}
