@@ -1,15 +1,9 @@
-const path = require('path');
+
 const merge = require('webpack-merge');
 const config = require('./webpack.config-prod.js');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-const WebpackAutoInject = require('webpack-auto-inject-version');
-
-
-
-process.env.NODE_ENV = 'production';
 
 function compileDate() {
 

@@ -2,8 +2,12 @@
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 const WebpackAutoInject = require('webpack-auto-inject-version');
+
+console.log('\n===============================');
+console.log(process.env.NODE_ENV);
+console.log(process.env.production);
+console.log('===============================\n');
 
 module.exports = {
     mode: 'production',
@@ -20,8 +24,6 @@ module.exports = {
     },
     plugins: [
         new WebpackAutoInject({
-            // specify the name of the tag in the outputed files eg
-            // bundle.js: [SHORT]  Version: 0.13.36 ...
             SHORT: 'Author: David Lopez Blasco',
             SILENT: false,
             PACKAGE_JSON_PATH: './package.json',
@@ -33,17 +35,15 @@ module.exports = {
             },
             componentsOptions: {
                 AutoIncreaseVersion: {
-                    runInWatchMode: false // it will increase version with every single build!
+                    runInWatchMode: false
                 },
                 InjectAsComment: {
                     tag: 'Version: {version} - {date}',
                     dateFormat: 'h:MM:ss TT', // change timezone: `UTC:h:MM:ss` or `GMT:h:MM:ss`
-                    multiLineCommentType: true, // use `/** */` instead of `//` as comment block
+                    multiLineCommentType: true,
                 },
                 InjectByTag: {
                     fileRegex: /\.+/,
-                    // regexp to find [AIV] tag inside html, if you tag contains unallowed characters you can adjust the regex
-                    // but also you can change [AIV] tag to anything you want
                     AIVTagRegexp: /(\[AIV])(([a-zA-Z{} ,:;!()_@\-"'\\\/])+)(\[\/AIV])/g,
                     dateFormat: 'h:MM:ss TT'
                 }

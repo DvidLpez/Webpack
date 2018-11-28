@@ -1,6 +1,6 @@
 {
     "name": "webpack",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Compile js and sass for diferents pages and environments",
     "private": true,
     "scripts": {
@@ -29,6 +29,7 @@
         "webpack-merge": "^4.1.4"
     },
     "dependencies": {
+        "jquery": "^3.3.1",
         "lodash": "^4.17.10"
     }
 }

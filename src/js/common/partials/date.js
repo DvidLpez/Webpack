@@ -1,3 +1,11 @@
-function isNow() {
-    return new Date();
+export default class Fechas {
+
+    getFecha() {
+    
+        return new Date();
+    
+    }
 }
+
+
+
